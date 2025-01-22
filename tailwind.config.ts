@@ -2,13 +2,15 @@ import type { Config } from 'tailwindcss';
 import { tailwindAnimationConfig } from './src/lib/config/animations';
 import { tailwindColorConfig } from './src/lib/config/colors';
 import { tailwindTypographyConfig } from './src/lib/config/design-system';
+import { tailwindMobileConfig } from './src/lib/config/mobile-patterns';
 import { tailwindSpacingConfig } from './src/lib/config/spacing';
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   darkMode: ['class'],
   theme: {
@@ -19,12 +21,22 @@ const config: Config = {
         sm: '1.5rem',
         lg: '2rem',
       },
+      screens: {
+        xs: '320px', // Mobile S
+        sm: '375px', // Mobile M
+        md: '425px', // Mobile L
+        lg: '768px', // Tablet
+        xl: '1024px', // Laptop
+        '2xl': '1440px', // Desktop
+        '3xl': '2560px', // 4K
+      },
     },
     extend: {
       ...tailwindTypographyConfig.theme?.extend,
       ...tailwindColorConfig.theme?.extend,
       ...tailwindSpacingConfig.theme?.extend,
       ...tailwindAnimationConfig.theme?.extend,
+      ...tailwindMobileConfig.theme?.extend,
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
@@ -75,6 +87,20 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },

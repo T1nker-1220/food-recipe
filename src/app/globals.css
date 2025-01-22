@@ -283,19 +283,27 @@ body {
   }
 
   .transition-transform {
-    @apply transition-transform duration-normal ease-out;
+    transition-property: transform;
+    transition-duration: var(--duration-normal);
+    transition-timing-function: var(--ease-out);
   }
 
   .transition-opacity {
-    @apply transition-opacity duration-normal ease-out;
+    transition-property: opacity;
+    transition-duration: var(--duration-normal);
+    transition-timing-function: var(--ease-out);
   }
 
   .transition-colors {
-    @apply transition-colors duration-fast ease-in-out;
+    transition-property: color, background-color, border-color;
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--ease-in-out);
   }
 
   .transition-background {
-    @apply transition-[background] duration-fast ease-in-out;
+    transition-property: background;
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--ease-in-out);
   }
 
   /* Interactive States */
