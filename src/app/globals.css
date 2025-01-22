@@ -2,28 +2,181 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Typography */
+    --font-primary: var(--font-inter);
+    --font-secondary: var(--font-playfair);
+
+    /* Colors - Light Mode */
+    --background: theme(colors.neutral.50);
+    --foreground: theme(colors.neutral.950);
+
+    /* Primary Colors */
+    --primary: theme(colors.primary.500);
+    --primary-foreground: theme(colors.neutral.50);
+    --primary-hover: theme(colors.primary.600);
+    --primary-active: theme(colors.primary.700);
+    --primary-light: theme(colors.primary.100);
+    --primary-dark: theme(colors.primary.800);
+
+    /* Secondary Colors */
+    --secondary: theme(colors.secondary.500);
+    --secondary-foreground: theme(colors.neutral.50);
+    --secondary-hover: theme(colors.secondary.600);
+    --secondary-active: theme(colors.secondary.700);
+    --secondary-light: theme(colors.secondary.100);
+    --secondary-dark: theme(colors.secondary.800);
+
+    /* Accent Colors */
+    --accent: theme(colors.accent.500);
+    --accent-foreground: theme(colors.neutral.50);
+    --accent-hover: theme(colors.accent.600);
+    --accent-active: theme(colors.accent.700);
+    --accent-light: theme(colors.accent.100);
+    --accent-dark: theme(colors.accent.800);
+
+    /* Semantic Colors */
+    --success: theme(colors.semantic.success.500);
+    --success-light: theme(colors.semantic.success.100);
+    --success-dark: theme(colors.semantic.success.700);
+
+    --warning: theme(colors.semantic.warning.500);
+    --warning-light: theme(colors.semantic.warning.100);
+    --warning-dark: theme(colors.semantic.warning.700);
+
+    --error: theme(colors.semantic.error.500);
+    --error-light: theme(colors.semantic.error.100);
+    --error-dark: theme(colors.semantic.error.700);
+
+    --info: theme(colors.semantic.info.500);
+    --info-light: theme(colors.semantic.info.100);
+    --info-dark: theme(colors.semantic.info.700);
+
+    /* Neutral Colors */
+    --neutral-50: theme(colors.neutral.50);
+    --neutral-100: theme(colors.neutral.100);
+    --neutral-200: theme(colors.neutral.200);
+    --neutral-300: theme(colors.neutral.300);
+    --neutral-400: theme(colors.neutral.400);
+    --neutral-500: theme(colors.neutral.500);
+    --neutral-600: theme(colors.neutral.600);
+    --neutral-700: theme(colors.neutral.700);
+    --neutral-800: theme(colors.neutral.800);
+    --neutral-900: theme(colors.neutral.900);
+    --neutral-950: theme(colors.neutral.950);
+
+    /* Component Colors */
+    --card: var(--neutral-50);
+    --card-foreground: var(--neutral-950);
+    --popover: var(--neutral-50);
+    --popover-foreground: var(--neutral-950);
+    --muted: var(--neutral-100);
+    --muted-foreground: var(--neutral-500);
+    --border: var(--neutral-200);
+    --input: var(--neutral-200);
+    --ring: var(--primary);
+  }
+
+  .dark {
+    /* Colors - Dark Mode */
+    --background: theme(colors.neutral.950);
+    --foreground: theme(colors.neutral.50);
+
+    /* Primary Colors */
+    --primary: theme(colors.primary.400);
+    --primary-foreground: theme(colors.neutral.950);
+    --primary-hover: theme(colors.primary.300);
+    --primary-active: theme(colors.primary.200);
+    --primary-light: theme(colors.primary.800);
+    --primary-dark: theme(colors.primary.100);
+
+    /* Secondary Colors */
+    --secondary: theme(colors.secondary.400);
+    --secondary-foreground: theme(colors.neutral.950);
+    --secondary-hover: theme(colors.secondary.300);
+    --secondary-active: theme(colors.secondary.200);
+    --secondary-light: theme(colors.secondary.800);
+    --secondary-dark: theme(colors.secondary.100);
+
+    /* Accent Colors */
+    --accent: theme(colors.accent.400);
+    --accent-foreground: theme(colors.neutral.950);
+    --accent-hover: theme(colors.accent.300);
+    --accent-active: theme(colors.accent.200);
+    --accent-light: theme(colors.accent.800);
+    --accent-dark: theme(colors.accent.100);
+
+    /* Semantic Colors */
+    --success: theme(colors.semantic.success.400);
+    --success-light: theme(colors.semantic.success.800);
+    --success-dark: theme(colors.semantic.success.200);
+
+    --warning: theme(colors.semantic.warning.400);
+    --warning-light: theme(colors.semantic.warning.800);
+    --warning-dark: theme(colors.semantic.warning.200);
+
+    --error: theme(colors.semantic.error.400);
+    --error-light: theme(colors.semantic.error.800);
+    --error-dark: theme(colors.semantic.error.200);
+
+    --info: theme(colors.semantic.info.400);
+    --info-light: theme(colors.semantic.info.800);
+    --info-dark: theme(colors.semantic.info.200);
+
+    /* Component Colors */
+    --card: var(--neutral-800);
+    --card-foreground: var(--neutral-50);
+    --popover: var(--neutral-800);
+    --popover-foreground: var(--neutral-50);
+    --muted: var(--neutral-800);
+    --muted-foreground: var(--neutral-400);
+    --border: var(--neutral-700);
+    --input: var(--neutral-700);
+    --ring: var(--primary);
+  }
+
+  /* Base Typography Styles */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-secondary;
+  }
+
+  h1 {
+    @apply text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl font-bold tracking-tight md:text-2xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-lg font-semibold tracking-tight md:text-xl lg:text-2xl;
+  }
+
+  h5 {
+    @apply text-base font-semibold tracking-tight md:text-lg lg:text-xl;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  small {
+    @apply text-sm leading-normal;
   }
 }
 
+/* Base styles */
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-background text-foreground;
 }
 
 @layer utilities {

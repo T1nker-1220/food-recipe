@@ -1,4 +1,6 @@
 import type { Config } from 'tailwindcss';
+import { tailwindColorConfig } from './src/lib/config/colors';
+import { tailwindTypographyConfig } from './src/lib/config/design-system';
 
 const config: Config = {
   content: [
@@ -6,8 +8,11 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: ['class'],
   theme: {
     extend: {
+      ...tailwindTypographyConfig.theme?.extend,
+      ...tailwindColorConfig.theme?.extend,
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
