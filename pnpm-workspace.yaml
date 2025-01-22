@@ -1,0 +1,5 @@
+packages:
+  # Core application
+  - '.'
+  # Future packages can be added here
+  - 'packages/*'

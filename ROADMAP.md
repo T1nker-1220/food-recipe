@@ -5,10 +5,10 @@
 ### 1.1 Project Initialization
 
 - [x] Initialize Next.js 14 project with App Router
-- [ ] Set up TypeScript configuration
-- [ ] Configure ESLint and Prettier
-- [ ] Initialize pnpm as package manager
-- [ ] Set up Git repository and branching strategy
+- [x] Set up TypeScript configuration
+- [x] Configure ESLint and Prettier
+- [x] Initialize pnpm as package manager
+- [x] Set up Git repository and branching strategy
 
 ### 1.2 Design System Implementation
 
