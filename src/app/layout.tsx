@@ -1,5 +1,5 @@
+import { ThemeProvider } from '@/components/providers/theme-provider';
 import type { Metadata } from 'next';
-import { ThemeProvider } from 'next-themes';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 
@@ -27,8 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
-      <body className="font-primary antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body className="bg-background text-foreground min-h-screen font-primary antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>
