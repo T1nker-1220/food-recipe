@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 import { tailwindColorConfig } from './src/lib/config/colors';
 import { tailwindTypographyConfig } from './src/lib/config/design-system';
+import { tailwindSpacingConfig } from './src/lib/config/spacing';
 
 const config: Config = {
   content: [
@@ -10,9 +11,18 @@ const config: Config = {
   ],
   darkMode: ['class'],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+        lg: '2rem',
+      },
+    },
     extend: {
       ...tailwindTypographyConfig.theme?.extend,
       ...tailwindColorConfig.theme?.extend,
+      ...tailwindSpacingConfig.theme?.extend,
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
