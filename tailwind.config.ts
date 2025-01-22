@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { tailwindAnimationConfig } from './src/lib/config/animations';
 import { tailwindColorConfig } from './src/lib/config/colors';
 import { tailwindTypographyConfig } from './src/lib/config/design-system';
 import { tailwindSpacingConfig } from './src/lib/config/spacing';
@@ -23,6 +24,7 @@ const config: Config = {
       ...tailwindTypographyConfig.theme?.extend,
       ...tailwindColorConfig.theme?.extend,
       ...tailwindSpacingConfig.theme?.extend,
+      ...tailwindAnimationConfig.theme?.extend,
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

@@ -106,6 +106,22 @@
     --fieldset-gap-mobile: 0.75rem;
     --fieldset-gap-tablet: 1rem;
     --fieldset-gap-desktop: 1.5rem;
+
+    /* Animation System */
+    --duration-instant: 0ms;
+    --duration-fastest: 100ms;
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 400ms;
+    --duration-slowest: 500ms;
+
+    /* Easing Functions */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.45, 0, 0.55, 1);
   }
 
   .dark {
@@ -223,15 +239,15 @@ body {
   }
 
   .grid-mobile {
-    @apply grid-cols-mobile grid gap-4 sm:gap-6;
+    @apply grid grid-cols-mobile gap-4 sm:gap-6;
   }
 
   .grid-tablet {
-    @apply grid-cols-tablet grid gap-6 lg:gap-8;
+    @apply grid grid-cols-tablet gap-6 lg:gap-8;
   }
 
   .grid-desktop {
-    @apply grid-cols-desktop grid gap-8;
+    @apply grid grid-cols-desktop gap-8;
   }
 
   .card-padding {
@@ -244,5 +260,74 @@ body {
 
   .fieldset-gap {
     @apply space-y-3 sm:space-y-4 lg:space-y-6;
+  }
+
+  /* Animation Classes */
+  .transition-base {
+    @apply duration-normal transition-all ease-in-out;
+  }
+
+  .transition-transform {
+    @apply duration-normal transition-transform ease-out;
+  }
+
+  .transition-opacity {
+    @apply duration-normal transition-opacity ease-out;
+  }
+
+  .transition-colors {
+    @apply duration-fast transition-colors ease-in-out;
+  }
+
+  .transition-background {
+    @apply duration-fast transition-[background] ease-in-out;
+  }
+
+  /* Interactive States */
+  .hover-scale {
+    @apply duration-fast transition-transform hover:scale-105;
+  }
+
+  .hover-lift {
+    @apply duration-fast transition-transform hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply duration-normal transition-all hover:brightness-110;
+  }
+
+  .active-scale {
+    @apply duration-fastest transition-transform active:scale-95;
+  }
+
+  /* Loading States */
+  .loading-spin {
+    @apply animate-spin;
+  }
+
+  .loading-pulse {
+    @apply animate-pulse;
+  }
+
+  .loading-float {
+    @apply animate-float;
+  }
+
+  /* Page Transitions */
+  .page-enter {
+    @apply animate-fadeIn;
+  }
+
+  .page-exit {
+    @apply animate-fadeOut;
+  }
+
+  /* Content Transitions */
+  .content-enter {
+    @apply animate-slideIn;
+  }
+
+  .content-exit {
+    @apply animate-slideOut;
   }
 }
