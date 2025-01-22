@@ -22,8 +22,8 @@ export interface Instruction {
 }
 
 export interface RecipeDetails {
-  prepTime: number;    // in minutes
-  cookTime: number;    // in minutes
+  prepTime: number; // in minutes
+  cookTime: number; // in minutes
   servings: number;
   difficulty: 'easy' | 'medium' | 'hard';
   cuisine?: string;
@@ -42,7 +42,7 @@ export interface APIResponse<T> {
   error?: {
     code: string;
     message: string;
-    details?: any;
+    details?: string;
   };
   meta?: {
     page?: number;

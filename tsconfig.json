@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -24,33 +20,15 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/components/*": [
-        "src/components/*"
-      ],
-      "@/lib/*": [
-        "src/lib/*"
-      ],
-      "@/styles/*": [
-        "src/styles/*"
-      ],
-      "@/types/*": [
-        "src/types/*"
-      ],
-      "@/utils/*": [
-        "src/utils/*"
-      ],
-      "@/hooks/*": [
-        "src/hooks/*"
-      ],
-      "@/constants/*": [
-        "src/constants/*"
-      ],
-      "@/services/*": [
-        "src/services/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/types/*": ["src/types/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/services/*": ["src/services/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
@@ -64,14 +42,6 @@
     "noImplicitAny": true,
     "alwaysStrict": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/types/**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/types/**/*.d.ts"],
+  "exclude": ["node_modules"]
 }
