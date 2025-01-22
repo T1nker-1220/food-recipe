@@ -17,14 +17,14 @@ This document outlines the implemented design system for our recipe website, cov
 
 ```typescript
 // Desktop Scale (Modular Scale: 1.25)
-h1: '3.815rem'  // 61.04px
-h2: '3.052rem'  // 48.83px
-h3: '2.441rem'  // 39.06px
-h4: '1.953rem'  // 31.25px
-h5: '1.563rem'  // 25.00px
-base: '1.25rem' // 20.00px
-sm: '1rem'      // 16.00px
-xs: '0.8rem'    // 12.80px
+h1: '3.815rem'; // 61.04px
+h2: '3.052rem'; // 48.83px
+h3: '2.441rem'; // 39.06px
+h4: '1.953rem'; // 31.25px
+h5: '1.563rem'; // 25.00px
+base: '1.25rem'; // 20.00px
+sm: '1rem'; // 16.00px
+xs: '0.8rem'; // 12.80px
 ```
 
 ### Font Weights

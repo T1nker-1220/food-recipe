@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
-      <body className="bg-background text-foreground min-h-screen font-primary antialiased">
+      <body className="min-h-screen bg-background font-primary text-foreground antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
